@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "2003465497",
+    "project_id": "nearby-78ec8",
+    "storage_bucket": "nearby-78ec8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2003465497:android:bbd624ac6215692f3d0188",
+        "android_client_info": {
+          "package_name": "com.bachhs.nearby"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2003465497-chvk717729euiv4krqpq13ajc09h363q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ3zB9n3T_LdYym1cgT0zAb2M1eL20Gbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2003465497-chvk717729euiv4krqpq13ajc09h363q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
