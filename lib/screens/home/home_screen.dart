@@ -1,20 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:location/location.dart';
 import 'package:nearby/constants.dart';
 import 'package:nearby/screens/home/components/body.dart';
+import 'package:nearby/screens/map/map_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar(),
+      appBar: buildAppBar(context),
       body: Body(),
     );
   }
 
-  AppBar buildAppBar() {
+  void _pushPage(BuildContext context) async {
+    final location = Location();
+    final hasPermissions = await location.hasPermission();
+    if (hasPermissions != PermissionStatus.granted) {
+      await location.requestPermission();
+    }
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => FullMap()),
+    );
+  }
+
+  AppBar buildAppBar(BuildContext context) {
     return AppBar(
       backwardsCompatibility: false,
       systemOverlayStyle: SystemUiOverlayStyle(
@@ -26,7 +41,7 @@ class HomeScreen extends StatelessWidget {
       leading: IconButton(
         padding: EdgeInsets.only(left: kDefaultPadding),
         icon: SvgPicture.asset("assets/icons/menu.svg"),
-        onPressed: () {},
+        onPressed: () => _pushPage(context),
       ),
       actions: <Widget>[
         IconButton(

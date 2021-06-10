@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nearby/screens/home/home_screen.dart';
+import 'package:wemapgl/wemapgl.dart' as WEMAP;
 
 void main() {
+  WEMAP.Configuration.setWeMapKey('GqfwrZUEfxbwbnQUhtBMFivEysYIxelQ');
   runApp(MyApp());
 }
 
