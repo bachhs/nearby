@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nearby/models/movie.dart';
+import 'package:nearby/services/notification_service.dart';
 
 import '../../../constants.dart';
 
@@ -52,7 +53,9 @@ class TitleDurationAndFabBtn extends StatelessWidget {
             height: 64,
             width: 64,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () async {
+                await NotificationService().zonedScheduleNotification();
+              },
               style: ElevatedButton.styleFrom(
                 primary: kSecondaryColor,
                 shape: RoundedRectangleBorder(

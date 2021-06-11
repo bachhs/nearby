@@ -1,17 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nearby/components/ePage.dart';
 import 'package:nearby/models/movie.dart';
 import 'package:nearby/screens/details/details_screen.dart';
 import 'package:wemapgl/wemapgl.dart';
-
-class FullMapPage extends EPage {
-  FullMapPage() : super(const Icon(Icons.map), 'Full screen map');
-
-  @override
-  Widget build(BuildContext context) {
-    return const FullMap();
-  }
-}
 
 class FullMap extends StatefulWidget {
   const FullMap();
@@ -30,21 +20,7 @@ class FullMapState extends State<FullMap> {
 
   void _onMapCreated(WeMapController controller) {
     mapController = controller;
-    controller.addSymbols([
-      SymbolOptions(
-        geometry: LatLng(21.036029, 105.782950),
-        iconImage: "assets/images/actor_1.png",
-      ),
-      SymbolOptions(
-        zIndex: 999999,
-        geometry: LatLng(21.0379161, 105.7752536),
-        iconImage: "assets/images/actor_1.png",
-      ),
-    ], [
-      {'zero': 0, 'one': 1, 'two': 2},
-      {'zero': 0, 'one': 1, 'two': 2}
-    ]);
-    controller.onSymbolTapped.add(_onSymbolTapped);
+    mapController.onSymbolTapped.add(_onSymbolTapped);
   }
 
   @override
@@ -58,6 +34,23 @@ class FullMapState extends State<FullMap> {
       context,
       MaterialPageRoute(builder: (context) => DetailsScreen(movie: movies[0])),
     );
+  }
+
+  void _onStyleLoadedCallback() {
+    mapController.addSymbols([
+      SymbolOptions(
+        geometry: LatLng(21.036029, 105.782950),
+        iconImage: "assets/images/actor_1.png",
+      ),
+      SymbolOptions(
+        zIndex: 999999,
+        geometry: LatLng(21.0379161, 105.7752536),
+        iconImage: "assets/images/actor_1.png",
+      ),
+    ], [
+      {'zero': 0, 'one': 1, 'two': 2},
+      {'zero': 0, 'one': 1, 'two': 2}
+    ]);
   }
 
   @override
@@ -78,6 +71,7 @@ class FullMapState extends State<FullMap> {
             },
             reverse: true,
             onMapCreated: _onMapCreated,
+            onStyleLoadedCallback: _onStyleLoadedCallback,
             myLocationEnabled: true,
             myLocationTrackingMode: MyLocationTrackingMode.Tracking,
             myLocationRenderMode: MyLocationRenderMode.GPS,

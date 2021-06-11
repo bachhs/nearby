@@ -31,6 +31,8 @@ dependencies:
   firebase_core: ^1.2.1
   flutter_svg: ^0.22.0
   animations: ^2.0.0
+  flutter_local_notifications: ^6.0.0
+  location: ^4.2.3
 
 dev_dependencies:
   flutter_test:

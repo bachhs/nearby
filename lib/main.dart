@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:nearby/screens/home/home_screen.dart';
+import 'package:nearby/services/notification_service.dart';
 import 'package:wemapgl/wemapgl.dart' as WEMAP;
 
-void main() {
+Future<void> main() async {
   WEMAP.Configuration.setWeMapKey('GqfwrZUEfxbwbnQUhtBMFivEysYIxelQ');
+  WidgetsFlutterBinding.ensureInitialized();
+  await NotificationService().init();
   runApp(MyApp());
 }
 
