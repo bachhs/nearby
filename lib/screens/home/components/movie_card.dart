@@ -1,6 +1,5 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:nearby/models/movie.dart';
 import 'package:nearby/screens/details/details_screen.dart';
 
@@ -48,20 +47,6 @@ class MovieCard extends StatelessWidget {
                 .copyWith(fontWeight: FontWeight.w600),
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(
-              "assets/icons/star_fill.svg",
-              height: 20,
-            ),
-            SizedBox(width: kDefaultPadding / 2),
-            Text(
-              "${movie.rating}",
-              style: Theme.of(context).textTheme.bodyText2,
-            )
-          ],
-        )
       ],
     );
   }

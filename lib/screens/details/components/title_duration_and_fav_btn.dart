@@ -40,7 +40,7 @@ class TitleDurationAndFabBtn extends StatelessWidget {
                     ),
                     SizedBox(width: kDefaultPadding),
                     Text(
-                      "120 min",
+                      "120 phút",
                       style: TextStyle(color: kTextLightColor),
                     ),
                     SizedBox(width: kDefaultPadding),

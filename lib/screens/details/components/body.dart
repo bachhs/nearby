@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
               horizontal: kDefaultPadding,
             ),
             child: Text(
-              "Plot Summary",
+              "Nội dung",
               style: Theme.of(context).textTheme.headline5,
             ),
           ),

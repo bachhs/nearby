@@ -15,7 +15,7 @@ class CastAndCrew extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "Cast & Crew",
+            "Với sự tham gia",
             style: Theme.of(context).textTheme.headline5,
           ),
           SizedBox(
