@@ -60,7 +60,7 @@ class BackdropAndRating extends StatelessWidget {
                       SvgPicture.asset("assets/icons/location.svg"),
                       SizedBox(height: kDefaultPadding / 4),
                       Text(
-                        "Sân vận động Quốc gia Mỹ Đình",
+                        movie.location,
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w500),
                       ),
@@ -75,7 +75,9 @@ class BackdropAndRating extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Routing()),
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  Routing(destination: movie.location)),
                         );
                       },
                       child: Column(

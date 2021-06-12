@@ -41,6 +41,7 @@ class MovieCard extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
           child: Text(
             movie.title,
+            textAlign: TextAlign.center,
             style: Theme.of(context)
                 .textTheme
                 .headline5!

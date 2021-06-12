@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 import '../../../constants.dart';
 
 class Categorylist extends StatefulWidget {
+  final Function onTap;
+  Categorylist({required this.onTap});
+
   @override
   _CategorylistState createState() => _CategorylistState();
 }
 
 class _CategorylistState extends State<Categorylist> {
   int selectedCategory = 0;
-  List<String> categories = ["In Theater", "Box Office", "Comming Soon"];
+  List<String> categories = ["Hot", "All"];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,6 +29,7 @@ class _CategorylistState extends State<Categorylist> {
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
       child: GestureDetector(
         onTap: () {
+          if (selectedCategory != index) widget.onTap();
           setState(() {
             selectedCategory = index;
           });

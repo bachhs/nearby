@@ -35,12 +35,12 @@ class TitleDurationAndFabBtn extends StatelessWidget {
                     ),
                     SizedBox(width: kDefaultPadding),
                     Text(
-                      "PG-13",
+                      "23h45 11/06/2021",
                       style: TextStyle(color: kTextLightColor),
                     ),
                     SizedBox(width: kDefaultPadding),
                     Text(
-                      "2h 32min",
+                      "120 min",
                       style: TextStyle(color: kTextLightColor),
                     ),
                     SizedBox(width: kDefaultPadding),
@@ -54,7 +54,8 @@ class TitleDurationAndFabBtn extends StatelessWidget {
             width: 64,
             child: ElevatedButton(
               onPressed: () async {
-                await NotificationService().zonedScheduleNotification();
+                await NotificationService()
+                    .zonedScheduleNotification(movie.title, movie.plot);
               },
               style: ElevatedButton.styleFrom(
                 primary: kSecondaryColor,
@@ -62,7 +63,7 @@ class TitleDurationAndFabBtn extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20)),
               ),
               child: Icon(
-                Icons.add,
+                Icons.notifications,
                 size: 28,
                 color: Colors.white,
               ),

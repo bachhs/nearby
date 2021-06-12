@@ -31,11 +31,11 @@ class NotificationService {
     tz.initializeTimeZones();
   }
 
-  Future<void> zonedScheduleNotification() async {
+  Future<void> zonedScheduleNotification(String title, String body) async {
     await flutterLocalNotificationsPlugin.zonedSchedule(
         0,
-        'scheduled title',
-        'scheduled body',
+        '$title',
+        '$body',
         tz.TZDateTime.now(tz.local).add(const Duration(seconds: 5)),
         const NotificationDetails(
           android: AndroidNotificationDetails(

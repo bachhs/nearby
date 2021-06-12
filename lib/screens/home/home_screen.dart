@@ -39,8 +39,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       elevation: 0,
       leading: IconButton(
-        padding: EdgeInsets.only(left: kDefaultPadding),
-        icon: SvgPicture.asset("assets/icons/menu.svg"),
+        icon: SvgPicture.asset("assets/icons/nearby.svg"),
         onPressed: () => _pushPage(context),
       ),
       actions: <Widget>[

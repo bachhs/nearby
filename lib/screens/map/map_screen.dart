@@ -30,26 +30,36 @@ class FullMapState extends State<FullMap> {
   }
 
   void _onSymbolTapped(Symbol symbol) {
+    print(symbol.data);
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => DetailsScreen(movie: movies[0])),
+      MaterialPageRoute(
+          builder: (context) =>
+              DetailsScreen(movie: movies[int.parse(symbol.id)])),
     );
   }
 
   void _onStyleLoadedCallback() {
     mapController.addSymbols([
       SymbolOptions(
-        geometry: LatLng(21.036029, 105.782950),
+        zIndex: 999999,
+        geometry: LatLng(11.043377, 106.631708),
         iconImage: "assets/images/actor_1.png",
       ),
       SymbolOptions(
         zIndex: 999999,
-        geometry: LatLng(21.0379161, 105.7752536),
-        iconImage: "assets/images/actor_1.png",
+        geometry: LatLng(21.036029, 105.782950),
+        iconImage: "assets/images/actor_4.png",
+      ),
+      SymbolOptions(
+        zIndex: 999999,
+        geometry: LatLng(10.7935961, 106.6764416),
+        iconImage: "assets/images/actor_2.png",
       ),
     ], [
       {'zero': 0, 'one': 1, 'two': 2},
-      {'zero': 0, 'one': 1, 'two': 2}
+      {'zero': 0, 'one': 1, 'two': 2},
+      {'zero': 0, 'one': 1, 'two': 2},
     ]);
   }
 
